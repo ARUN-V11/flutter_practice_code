@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Card'),
+      ),
+      body: Center(
+        child: Card(
+          color: Colors.blue[100],
+          //elevation: 10.0,
+          //shape:
+          //  RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            height: 100,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Success is not final; failure is not fatal: It is the courage to continue that counts.',
+                  style: TextStyle(fontSize: 15.0),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  '— Winston S. Churchill',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

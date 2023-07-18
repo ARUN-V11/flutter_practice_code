@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: new Myapp(),
+  ));
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: Text('loosifer'),
+      ),
+      body: new Container(
+        child: new Text('welcome to my app'),
+      ),
+    );
+  }
+}

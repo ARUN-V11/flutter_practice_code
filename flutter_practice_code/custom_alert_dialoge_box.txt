@@ -1,0 +1,71 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('simple custom alert'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text(
+            "click me",
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () {
+            String title = "Test Message";
+            String message = "helow world";
+            showAlertDialog(context, title, message);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+showAlertDialog(BuildContext context, String title, String message) {
+  Widget Okbtn = TextButton(
+    onPressed: () {},
+    child: Text(
+      'ok',
+      style: TextStyle(color: Colors.redAccent),
+    ),
+  );
+  Widget cancel = TextButton(
+    onPressed: () {},
+    child: Text(
+      'cancel',
+      style: TextStyle(color: Colors.redAccent),
+    ),
+  );
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      title,
+      style: TextStyle(color: Colors.orange),
+    ),
+    content: Text(message),
+    actions: [
+      Okbtn,
+    ],
+  );
+  showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      });
+}

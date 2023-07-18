@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new Myapp());
+}
+
+//safearea
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SafeArea(child: Text('loosifer')),
+    );
+  }
+}
+
+//this is an stateful widget
+//we can able to interact with the user using this
+/*class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  String value = 'test';
+  void clickMe() {
+    setState(() {
+      value = "loosifer";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Row(children: <Widget>[
+        Text('$value'),
+        FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: clickMe,
+        )
+      ]),
+    );
+  }
+}
+//this is the stateless widget
+//its an immutable we can't able to change it.
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: ('loosifer'),
+    );
+  }
+}*/

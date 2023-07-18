@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: Myapp(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: new AppBar(
+        title: Text('Appbar'),
+      ),
+      body: Center(
+        child: Text('Arun Venkatesh',
+            style: TextStyle(
+              fontSize: 25.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              letterSpacing: 1.0,
+              wordSpacing: 5.0,
+              backgroundColor: Colors.teal,
+              shadows: [
+                Shadow(
+                  color: Colors.black,
+                  offset: Offset(1, 4),
+                  blurRadius: 5,
+                )
+              ],
+              decoration: TextDecoration.underline,
+              decorationColor: Colors.red,
+              decorationStyle: TextDecorationStyle.double,
+            )),
+      ),
+    );
+  }
+}

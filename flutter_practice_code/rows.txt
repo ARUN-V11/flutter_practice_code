@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: Myapp(),
+  ));
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: new AppBar(
+        title: Text('ROW WIDGETS'),
+      ),
+      body: Container(
+        color: Colors.white,
+        height: 1000,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              color: Colors.red,
+              height: 100,
+              width: 100,
+            ),
+            Container(
+              color: Colors.green,
+              height: 100,
+              width: 100,
+            ),
+            Container(
+              color: Colors.orange,
+              height: 100,
+              width: 100,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

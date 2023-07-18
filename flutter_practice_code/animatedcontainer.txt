@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    home: Myapp(),
+  ));
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  var _width = 0.0;
+  var _height = 0.0;
+  var _border = 0.0;
+  var _borderRadius = 0.0;
+  AnimationFunction() {
+    setState(() {
+      _width = _width == 0.0 ? 200.0 : 0.0;
+      _height = _height == 0.0 ? 200.0 : 0.0;
+    });
+  }
+
+  changeBorder() {
+    setState(() {
+      _border = _border == 0.0 ? 10.0 : 0.0;
+    });
+  }
+
+  BorderRadius() {
+    setState(() {
+      _borderRadius = _borderRadius == 0.0 ? 10.0 : 0.0;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Animated_container'),
+        ),
+        body: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(15.0),
+          child: Column(
+            children: <Widget>[
+              AnimatedContainer(
+                duration: Duration(seconds: 1),
+                height: _height,
+                width: _width,
+                decoration: BoxDecoration(
+                    color: Colors.orange,
+                    border: Border.all(color: Colors.red, width: _border)),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  AnimationFunction();
+                },
+                child: Text(
+                  'click me',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    changeBorder();
+                  },
+                  child: Text(
+                    'Border',
+                    style: TextStyle(color: Colors.white),
+                  )),
+              ElevatedButton(
+                  onPressed: () {
+                    BorderRadius();
+                  },
+                  child: Text(
+                    'Border radius',
+                    style: TextStyle(color: Colors.white),
+                  ))
+            ],
+          ),
+        ));
+  }
+}
